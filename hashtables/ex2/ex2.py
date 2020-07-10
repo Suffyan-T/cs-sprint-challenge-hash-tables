@@ -12,14 +12,14 @@ def reconstruct_trip(tickets, length):
     # Your code here
 
     route = [None] * length
-    loc = {}
+    cache = {}
     for ticket in tickets:
-        loc[ticket.source] = ticket.destination
-    next = loc["NONE"]
+        cache[ticket.source] = ticket.destination
+    next = cache["NONE"]
 
     for i in range(0, length):
         route[i] = next
-        next = loc[next]
+        next = cache[next]
 
 
     return route

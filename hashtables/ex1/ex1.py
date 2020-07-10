@@ -4,12 +4,12 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     # Your code here
 
-    data = {}
+    cache = {}
     for i in range(len(weights)):
-        data[weights[i]] = i
+        cache[weights[i]] = i
     for i in range(len(weights)):
         dif = limit-weights[i]
-        if dif in data:
-            return (max(i, data[dif]), min(i, data[dif]))
+        if dif in cache:
+            return (max(i, cache[dif]), min(i, cache[dif]))
 
     return None
