@@ -4,6 +4,13 @@ def has_negatives(a):
     """
     # Your code here
 
+    data = {}
+    result = []
+    for i in a:
+        data[i] = i
+        if i != 0 and -i in data:
+            print(i)
+            result.append(abs(i))
     return result
 
 
