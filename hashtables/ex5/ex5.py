@@ -7,6 +7,21 @@ def finder(files, queries):
     YOUR CODE HERE
     """
     # Your code here
+    result = []
+    cache = {}
+
+    for x in files:
+        key = x.rsplit('/', 1)[1] 
+        value = x
+
+        if key not in cache:
+            cache[key] = []
+        cache[key].append(x)
+
+
+    for y in queries:
+        if y in cache:
+            result += cache[y]
 
     return result
 
